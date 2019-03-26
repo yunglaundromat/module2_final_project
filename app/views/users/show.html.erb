@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<h3>  <%= @user.name %>'s favorite list</h3>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<ul>
+
+  <% @user.sights.each do |user_sight| %>
+  <li><%= user_sight.name %></li>
+  <%end %>
+</ul>
+
+<%=link_to 'add a new favorite', new_sight_path %>
